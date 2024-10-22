@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: my-database
+spec:
+  serviceName: "my-database"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-database
+  template:
+    metadata:
+      labels:
+        app: my-database
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:latest
+        ports:
+        - containerPort: 5432
+        env:
+        - name: POSTGRES_DB
+          value: ginjwt1docker
+        - name: POSTGRES_USER
+          value: root
+        - name: POSTGRES_PASSWORD
+          value: secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-database
+spec:
+  ports:
+  - port: 5432
+  selector:
+    app: my-database

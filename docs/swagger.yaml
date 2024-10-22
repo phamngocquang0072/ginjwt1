@@ -1,0 +1,47 @@
+basePath: /
+definitions:
+  controllers.UserResponse:
+    properties:
+      id:
+        type: integer
+      password:
+        type: string
+      username:
+        type: string
+    type: object
+host: localhost:5000
+info:
+  contact: {}
+  description: This is a sample server celler server.
+  title: Swagger API
+  version: "1.0"
+paths:
+  /user:
+    post:
+      consumes:
+      - application/json
+      description: Create a single user or multiple users
+      parameters:
+      - description: User details
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/controllers.UserResponse'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Create a user
+      tags:
+      - users
+swagger: "2.0"

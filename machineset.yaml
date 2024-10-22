@@ -1,0 +1,27 @@
+apiVersion: cluster.x-k8s.io/v1beta1
+kind: MachineSet
+metadata:
+  name: my-cluster-machineset
+  namespace: default
+spec:
+  clusterName: my-cluster  # This should match your Cluster resource name
+  replicas: 3  # Number of nodes you want
+  selector:
+    matchLabels:
+      cluster.x-k8s.io/cluster-name: my-cluster  # Select machines with this label
+  template:
+    metadata:
+      labels:
+        cluster.x-k8s.io/cluster-name: my-cluster  # Ensure this matches
+    spec:
+      clusterName: my-cluster  # Add this line
+      version: v1.25.0  # Update according to your desired version
+      bootstrap:
+        configRef:
+          apiVersion: bootstrap.cluster.x-k8s.io/v1beta1
+          kind: KubeadmConfigTemplate
+          name: my-cluster-bootstrap
+      infrastructureRef:
+        apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
+        kind: DockerMachine
+        name: my-cluster-machine-infra
