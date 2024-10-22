@@ -8,8 +8,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v4"
-	"github.com/quangnpham/ginjwt1/initializers"
-	"github.com/quangnpham/ginjwt1/internal/models"
+	"github.com/phamngocquang0072/ginjwt1/initializers"
+	"github.com/phamngocquang0072/ginjwt1/internal/models"
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
 )

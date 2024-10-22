@@ -8,10 +8,11 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v4"
-	"github.com/quangnpham/ginjwt1/initializers"
-	"github.com/quangnpham/ginjwt1/internal/models"
+	"github.com/phamngocquang0072/ginjwt1/initializers"
+	"github.com/phamngocquang0072/ginjwt1/internal/models"
 	"gorm.io/gorm"
 )
+
 var DB *gorm.DB
 
 func init() {
@@ -22,7 +23,7 @@ func init() {
 
 func RequireAuth(c *gin.Context) {
 	//get the cookie from the request
-    tokenString, err := c.Cookie("Authorization")
+	tokenString, err := c.Cookie("Authorization")
 
 	if err != nil {
 		c.AbortWithStatus(http.StatusUnauthorized)
@@ -35,7 +36,7 @@ func RequireAuth(c *gin.Context) {
 		}
 		return []byte(os.Getenv("SECRET")), nil
 	})
-		
+
 	if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
 		//check the experation time
 		if float64(time.Now().Unix()) > claims["exp"].(float64) {
@@ -57,6 +58,5 @@ func RequireAuth(c *gin.Context) {
 	} else {
 		c.AbortWithStatus(http.StatusUnauthorized)
 	}
-	
 
 }

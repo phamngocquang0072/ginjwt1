@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 
-	"github.com/quangnpham/ginjwt1/initializers"
-	"github.com/quangnpham/ginjwt1/internal/models"
+	"github.com/phamngocquang0072/ginjwt1/initializers"
+	"github.com/phamngocquang0072/ginjwt1/internal/models"
 	"gorm.io/gorm"
 )
 

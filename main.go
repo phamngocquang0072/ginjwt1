@@ -2,10 +2,10 @@ package main
 
 import (
 
-	"github.com/quangnpham/ginjwt1/initializers"
-	"github.com/quangnpham/ginjwt1/migrate"
-	"github.com/quangnpham/ginjwt1/internal/routers"
-	_ "github.com/quangnpham/ginjwt1/docs"
+	"github.com/phamngocquang0072/ginjwt1/initializers"
+	"github.com/phamngocquang0072/ginjwt1/migrate"
+	"github.com/phamngocquang0072/ginjwt1/internal/routers"
+	_ "github.com/phamngocquang0072/ginjwt1/docs"
 )
 
 
