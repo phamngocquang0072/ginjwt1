@@ -1,12 +1,12 @@
 package main
 
 import (
-	"github.com/phamngocquang0072/ginjwt1/initializers"
-	"github.com/phamngocquang0072/ginjwt1/internal/models"
 	"log"
+
+	"github.com/quangnpham/ginjwt1/initializers"
+	"github.com/quangnpham/ginjwt1/internal/models"
 	"gorm.io/gorm"
 )
-
 
 var DB *gorm.DB
 

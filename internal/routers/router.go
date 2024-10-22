@@ -4,8 +4,8 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
-	"github.com/phamngocquang0072/ginjwt1/internal/controllers"
-	"github.com/phamngocquang0072/ginjwt1/internal/middlewares"
+	"github.com/quangnpham/ginjwt1/internal/controllers"
+	"github.com/quangnpham/ginjwt1/internal/middlewares"
     swaggerFiles "github.com/swaggo/files" // swagger embed files
     ginSwagger "github.com/swaggo/gin-swagger" // swagger gin middleware
 )
