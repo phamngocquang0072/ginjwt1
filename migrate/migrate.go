@@ -1,4 +1,4 @@
-package main
+package migrate
 
 import (
 	"log"
@@ -18,8 +18,5 @@ func init() {
 
 func Migrate() {
 	DB.AutoMigrate(&models.User{})
-	log.Fatal("Migrated!")
-}
-
-func main() {
+	log.Println("Migrated!")
 }
